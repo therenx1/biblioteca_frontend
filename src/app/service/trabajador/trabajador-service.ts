@@ -8,7 +8,7 @@ import { Trabajador } from '../../models/trabajador/trabajador';
 })
 export class TrabajadorService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:8080/api/admin';
+  private apiUrl = 'https://bibliotecabackend-production.up.railway.app/api/admin';
 
   private getHeaders(): HttpHeaders {
     const token = localStorage.getItem('token');

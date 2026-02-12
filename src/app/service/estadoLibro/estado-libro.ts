@@ -7,7 +7,7 @@ import { EstadoLibro } from '../../models/estadoLibro/estado-libro';
   providedIn: 'root',
 })
 export class EstadoLibroService {
-  private apiUrl = 'http://localhost:8080/api/estadoLibro';
+  private apiUrl = 'https://bibliotecabackend-production.up.railway.app/apiestadoLibro';
 
   constructor(private http: HttpClient){}
 

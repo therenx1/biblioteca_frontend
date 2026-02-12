@@ -8,7 +8,7 @@ import { Prestamos } from '../../models/prestamos/prestamos';
 })
 export class PrestamosService {
 
-  private apiUrl = 'http://localhost:8080/api/prestamos';
+  private apiUrl = 'https://bibliotecabackend-production.up.railway.app/api/prestamos';
 
   constructor(private http: HttpClient) { }
 

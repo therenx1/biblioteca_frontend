@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class autoresService {
   
-  private apiUrl = 'http://localhost:8080/api/autores';
+  private apiUrl = 'https://bibliotecabackend-production.up.railway.app/api/autores';
   
   constructor(private http: HttpClient) {}
 

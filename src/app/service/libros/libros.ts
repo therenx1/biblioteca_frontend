@@ -7,7 +7,7 @@ import { Libros } from '../../models/libros/libros';
   providedIn: 'root',
 })
 export class LibrosService {
-  private apiUrl = 'http://localhost:8080/api/libros';
+  private apiUrl = 'https://bibliotecabackend-production.up.railway.app/api/libros';
 
   constructor(private http: HttpClient) { }
 
