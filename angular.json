@@ -26,8 +26,7 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "outputMode": "browser"
+            ]
           },
           "configurations": {
             "production": {
@@ -54,6 +53,9 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
         }
       }
     }
