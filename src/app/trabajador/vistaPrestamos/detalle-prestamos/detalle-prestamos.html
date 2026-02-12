@@ -1,0 +1,84 @@
+<div class="container" *ngIf="!cargando && prestamo">
+
+  <h2 class="form-title text-center mb-4">
+    <i class="bi bi-journal-bookmark-fill"></i> Detalle del Préstamo
+  </h2>
+
+  <div class="section-title">
+    <i class="bi bi-person-circle"></i> Datos del Usuario
+  </div>
+
+  <div class="row g-3">
+    <div class="col-md-4">
+      <label>Código Préstamo</label>
+      <input class="form-control form-control-sm"
+        [value]="prestamo.id_prestamos" readonly>
+    </div>
+
+    <div class="col-md-4">
+      <label>Nombre</label>
+      <input class="form-control form-control-sm"
+        [value]="prestamo.usuario?.nombre_usuario" readonly>
+    </div>
+
+    <div class="col-md-4">
+      <label>DNI</label>
+      <input class="form-control form-control-sm"
+        [value]="prestamo.usuario?.dni" readonly>
+    </div>
+  </div>
+
+  <div class="section-title mt-4">
+    <i class="bi bi-book"></i> Información del Libro
+  </div>
+
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label>Título</label>
+      <input class="form-control form-control-sm"
+        [value]="prestamo.libros?.titulo" readonly>
+    </div>
+
+    <div class="col-md-6">
+      <label>Autor</label>
+      <input class="form-control form-control-sm"
+        [value]="prestamo.libros?.autores?.nombreAutores" readonly>
+    </div>
+  </div>
+  <div class="section-title mt-4">
+    <i class="bi bi-clock-history"></i> Detalle del Préstamo
+  </div>
+
+  <div class="row g-3">
+    <div class="col-md-4">
+      <label>Fecha Préstamo</label>
+      <input class="form-control form-control-sm"
+        [value]="prestamo.fecha_prestamo" readonly>
+    </div>
+
+    <div class="col-md-4">
+      <label>Fecha Devolución</label>
+      <input class="form-control form-control-sm"
+        [value]="prestamo.fecha_devolucion" readonly>
+    </div>
+
+    <div class="col-md-4">
+      <label>Multa</label>
+      <input class="form-control form-control-sm"
+        [value]="prestamo.multa" readonly>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end mt-4 gap-2">
+    <button class="btn btn-secondary btn-sm" (click)="imprimir()">
+      <i class="bi bi-printer"></i> Imprimir
+    </button>
+
+    <a routerLink="/listadoPrestamos" class="btn btn-outline-primary btn-sm">
+      <i class="bi bi-arrow-left-circle"></i> Volver
+    </a>
+  </div>
+</div>
+
+<div *ngIf="cargando" class="text-center py-5">
+  <div class="spinner-border text-primary"></div>
+</div>

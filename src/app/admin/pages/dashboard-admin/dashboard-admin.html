@@ -1,0 +1,47 @@
+<h4 class="mb-4 fw-bold text-light">Panel de Control</h4>
+
+<div class="row g-4 mb-5">
+  <div class="col-md-4">
+    <div class="card card-custom border-0 shadow-sm h-100">
+      <div class="card-body text-center p-4">
+        <i class="bi bi-person-badge-fill display-4 mb-3" style="color: white;"></i>
+        <h6 class="text-light">BIBLIOTECARIOS</h6>
+        <h1 class="display-4 fw-bold" style="color: white;">{{ numBibliotecarios }}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-custom border-0 shadow-sm h-100">
+      <div class="card-body text-center p-4">
+        <i class="bi bi-person-check-fill display-4 mb-3" style="color: white;"></i>
+        <h6 class="text-light">AUXILIARES</h6>
+        <h1 class="display-4 fw-bold" style="color: white;">{{ numAuxiliares }}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-custom border-0 shadow-sm h-100 bg-dark text-white">
+      <div class="card-body text-center p-4">
+        <i class="bi bi-person-video3 display-4 text-white mb-3"></i>
+        <h6 class="text-light">SESIONES ACTIVAS</h6>
+        <h1 class="display-4 fw-bold text-white">{{ sesionesActivas }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 mx-auto">
+    <div class="card shadow-lg border-0 bg-dark text-white">
+      <div class="card-header bg-transparent fw-bold border-bottom border-secondary">
+        Distribución del Personal
+      </div>
+      <div class="card-body position-relative" style="height: 400px;">
+        <canvas #chartCanvas></canvas>
+      </div>
+      <div class="card-footer text-center small" style="color: white;">
+        Total: {{ numBibliotecarios + numAuxiliares }} trabajadores
+      </div>
+    </div>
+  </div>
+</div>

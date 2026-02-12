@@ -1,0 +1,83 @@
+<h4 class="mb-4 fw-bold text-light">Gestión de Bibliotecarios</h4>
+
+<div class="card shadow-lg border-0 mb-5">
+  <div class="card-header bg-naranja text-white fw-bold">
+    <i class="bi bi-person-badge-fill me-2"></i> Registrar Nuevo Bibliotecario
+  </div>
+  <div class="card-body bg-dark text-white">
+
+    <div *ngIf="mensaje" class="alert alert-success mb-4">
+      <i class="bi bi-check-circle-fill me-2"></i> {{ mensaje }}
+    </div>
+
+    <div *ngIf="errorMensaje" class="alert alert-danger mb-4">
+      <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ errorMensaje }}
+    </div>
+
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label small">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" [class.is-invalid]="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.touched">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label small">Apellido</label>
+        <input type="text" class="form-control" formControlName="apellido" [class.is-invalid]="registroForm.get('apellido')?.invalid && registroForm.get('apellido')?.touched">
+      </div>
+      <div class="col-md-8">
+        <label class="form-label small">Email</label>
+        <input type="email" class="form-control" formControlName="email" [class.is-invalid]="registroForm.get('email')?.invalid && registroForm.get('email')?.touched">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label small">Edad</label>
+        <input type="number" class="form-control" formControlName="edad" [class.is-invalid]="registroForm.get('edad')?.invalid && registroForm.get('edad')?.touched">
+      </div>
+      <div class="col-12">
+        <label class="form-label small">Contraseña</label>
+        <input type="password" class="form-control" formControlName="password" [class.is-invalid]="registroForm.get('password')?.invalid && registroForm.get('password')?.touched">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-naranja w-100 fw-bold" [disabled]="loading || registroForm.invalid">
+          {{ loading ? 'Registrando...' : 'REGISTRAR BIBLIOTECARIO' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="card shadow-lg border-0 bg-dark text-white">
+  <div class="card-header bg-transparent fw-bold border-bottom border-secondary d-flex justify-content-between align-items-center">
+    Lista de Bibliotecarios
+    <span class="badge bg-naranja fs-6">{{ bibliotecarios.length }}</span>
+  </div>
+  <div class="card-body p-0">
+    <ng-container *ngIf="bibliotecarios.length > 0; else empty">
+      <div class="table-responsive">
+        <table class="table table-dark table-hover mb-0">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Email</th>
+              <th>Edad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let b of bibliotecarios">
+              <td>{{ b.nombre }}</td>
+              <td>{{ b.apellido }}</td>
+              <td>{{ b.email }}</td>
+              <td>{{ b.edad }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+
+    <ng-template #empty>
+      <div class="text-center py-5">
+        <i class="bi bi-inbox display-1 text-secondary mb-4"></i>
+        <p class="text-light fs-5">No hay bibliotecarios registrados aún</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

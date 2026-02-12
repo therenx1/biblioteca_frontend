@@ -1,0 +1,37 @@
+<h4 class="mb-4 fw-bold text-light">Mi Perfil - Administrador</h4>
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow border-0 bg-dark text-white">
+      <div class="card-body p-5">
+        <div class="text-center mb-5">
+          <i class="bi bi-person-circle display-1 text-naranja mb-4"></i>
+          <h4 class="fw-bold">{{ adminPerfil.nombre }} {{ adminPerfil.apellido }}</h4>
+          <p class="text-naranja fs-5">{{ adminPerfil.email }}</p>
+          <span class="badge bg-naranja fs-6 px-4 py-2">Administrador</span>
+        </div>
+
+        <hr class="border-secondary my-5">
+
+        <h6 class="text-naranja fw-bold mb-4">Mis Datos Personales</h6>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label small text-light">Nombre</label>
+            <input type="text" class="form-control bg-secondary text-white" [value]="adminPerfil.nombre" disabled>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small text-light">Apellido</label>
+            <input type="text" class="form-control bg-secondary text-white" [value]="adminPerfil.apellido || 'No registrado'" disabled>
+          </div>
+          <div class="col-md-7">
+            <label class="form-label small text-light">Correo Electrónico</label>
+            <input type="email" class="form-control bg-secondary text-white" [value]="adminPerfil.email" disabled>
+          </div>
+          <div class="col-md-5">
+            <label class="form-label small text-light">Edad</label>
+            <input type="number" class="form-control bg-secondary text-white" [value]="adminPerfil.edad || 'No registrada'" disabled>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

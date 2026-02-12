@@ -1,0 +1,56 @@
+<div class="contenedor" *ngIf="perfil">
+  <div class="container-fluid px-5 py-4 d-flex align-items-center justify-content-center min-vh-100">
+
+    <div class="card shadow-lg border-0 rounded-4 w-100" style="max-width: 1200px;">
+      <div class="row g-0">
+
+        <div
+          class="col-lg-4 text-white d-flex flex-column align-items-center justify-content-center p-5 bg-orange rounded-start-4">
+
+          <img
+            src="/img/icono.png"
+            class="img-fluid rounded-circle mb-4"
+            style="width:180px;height:180px;object-fit:cover;border:5px solid rgba(255,255,255,.3);">
+
+          <h4 class="fw-bold fs-3 text-center">
+            {{ perfil.nombre }} {{ perfil.apellido }}
+          </h4>
+
+          <p class="fst-italic text-white-50 fs-5">
+            {{ perfil.rol }}
+          </p>
+        </div>
+
+        <div class="col-lg-8 bg-light rounded-end-4 p-5">
+
+          <h3 class="text-dark mb-4">
+            <i class="bi bi-person-vcard me-2 text-warning"></i>
+            Información General
+          </h3>
+
+          <div class="row g-4">
+
+            <div class="col-md-6" *ngFor="let item of datos">
+              <div class="info-box d-flex align-items-center">
+                <i class="{{ item.icon }} text-warning me-3 fs-4"></i>
+                <div>
+                  <strong>{{ item.label }}:</strong><br>
+                  <span class="text-muted fs-5">{{ item.value }}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="text-end mt-5">
+            <a routerLink="/vistaPrincipal" class="btn btn-warning btn-lg px-4">
+              <i class="bi bi-arrow-left-circle me-2"></i> Regresar
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

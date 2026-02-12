@@ -1,0 +1,83 @@
+<div class="contenedorGeneral">
+    <div class="contenedor">
+        <main>
+            <div class="form-container">
+                <h2>
+                    <i class="bi" [ngClass]="esEdicion ? 'bi-pencil-square' : 'bi-person-plus-fill'"></i> 
+                    {{ esEdicion ? 'Editar Usuario' : 'Registro de Usuario' }}
+                </h2>
+
+                <form (ngSubmit)="guardar()">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label">Código</label>
+                            <input type="text" class="form-control" name="id_usuario" 
+                                   [(ngModel)]="usuario.id_usuario" readonly placeholder="Auto-generado">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="nombre" 
+                                   [(ngModel)]="usuario.nombre_usuario" placeholder="Ej: Juan" required>
+                        </div>
+                    
+                        <div class="col-md-4">
+                            <label class="form-label">Apellido</label>
+                            <input type="text" class="form-control" name="apellido" 
+                                   [(ngModel)]="usuario.apellido_usuario" placeholder="Ej: Pérez" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">DNI</label>
+                            <input type="text" class="form-control" name="dni" 
+                                   [(ngModel)]="usuario.dni" placeholder="Ej: 12345678" required>
+                        </div>
+
+                        <div class="col-md-8">
+                            <label class="form-label">Correo</label>
+                            <input type="email" class="form-control" name="correo" 
+                                   [(ngModel)]="usuario.correo" placeholder="Ej: ejemplo@gmail.com" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" name="telefono" 
+                                   [(ngModel)]="usuario.telefono" placeholder="Ej: 987654321">
+                        </div>
+
+                        <div class="col-md-8">
+                            <label class="form-label">Dirección</label>
+                            <input type="text" class="form-control" name="direccion" 
+                                   [(ngModel)]="usuario.direccion" placeholder="Ej: Av. Los Álamos 123">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Género</label>
+                            <select class="form-select" name="genero" [(ngModel)]="usuario.genero">
+                                <option value="">Seleccione...</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" name="fecha_nacimiento" 
+                                   [(ngModel)]="usuario.fecha_nacimiento">
+                        </div>
+                    </div>
+
+                    <div class="btn-group-custom mt-4">
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-check-circle"></i> {{ esEdicion ? 'Actualizar' : 'Guardar' }}
+                        </button>
+                        <a routerLink="/vistaUsuarios" class="btn btn-primary">
+                            <i class="bi bi-arrow-left-circle"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>

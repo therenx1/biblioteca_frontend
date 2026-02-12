@@ -1,0 +1,136 @@
+<div class="containerGeneral">
+  <div class="container">
+    <main>
+      <div class="form-container">
+
+      <h2 class="form-title">
+        <i class="bi bi-journal-bookmark-fill"></i>
+        {{ esEdicion ? 'Editar Préstamo' : 'Registrar Préstamo' }}
+      </h2>
+
+
+        <form (ngSubmit)="guardarPrestamo()" #formPrestamo="ngForm">
+
+          <div class="row g-3">
+
+            <div class="col-md-4">
+              <label class="form-label">Usuario <span class="text-danger">*</span></label>
+              <select
+                class="form-select form-select-sm"
+                [(ngModel)]="prestamo.usuario"
+                name="usuario"
+                required
+              >
+                <option [ngValue]="null">-- Seleccione Usuario --</option>
+                <option *ngFor="let u of usuarios" [ngValue]="u">
+                  {{ u.nombre_usuario }}
+                </option>
+              </select>
+            </div>
+
+        
+            <div class="col-md-4">
+              <label class="form-label">Libro <span class="text-danger">*</span></label>
+              <select
+                class="form-select form-select-sm"
+                [(ngModel)]="prestamo.libros"
+                name="libro"
+                required
+              >
+                <option [ngValue]="null">-- Seleccione Libro --</option>
+                <option *ngFor="let l of libros" [ngValue]="l">
+                  {{ l.titulo }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Estado del Libro <span class="text-danger">*</span></label>
+              <select
+                class="form-select form-select-sm"
+                [(ngModel)]="prestamo.estadoLibro"
+                name="estado"
+                required
+              >
+                <option [ngValue]="null">-- Seleccione Estado --</option>
+                <option *ngFor="let e of estados" [ngValue]="e">
+                  {{ e.descripcion }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Fecha Préstamo</label>
+              <input
+                type="date"
+                class="form-control form-control-sm"
+                [(ngModel)]="prestamo.fecha_prestamo"
+                name="fechaPrestamo"
+                required
+              />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Fecha Devolución</label>
+              <input
+                type="date"
+                class="form-control form-control-sm"
+                [(ngModel)]="prestamo.fecha_devolucion"
+                name="fechaDevolucion"
+                required
+              />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Fecha Real</label>
+              <input
+                type="date"
+                class="form-control form-control-sm"
+                [(ngModel)]="prestamo.fecha_real"
+                name="fechaReal"
+              />
+            </div>
+
+      
+            <div class="col-md-4">
+              <label class="form-label">Multa</label>
+              <input
+                type="number"
+                class="form-control form-control-sm"
+                [(ngModel)]="prestamo.multa"
+                name="multa"
+              />
+            </div>
+
+    
+            <div class="col-md-12">
+              <label class="form-label">Comentarios</label>
+              <textarea
+                class="form-control form-control-sm"
+                [(ngModel)]="prestamo.comentarios"
+                name="comentarios"
+              ></textarea>
+            </div>
+
+          </div>
+
+          <div class="d-flex justify-content-between mt-4">
+        <button type="submit"
+                class="btn btn-success btn-sm"
+                [disabled]="cargando">
+          <i class="bi"
+            [ngClass]="esEdicion ? 'bi-pencil-square' : 'bi-check-circle'"></i>
+          {{ esEdicion ? 'Actualizar Préstamo' : 'Guardar Préstamo' }}
+        </button>
+
+            <a routerLink="/listadoPrestamos" class="btn btn-outline-secondary btn-sm">
+              Cancelar
+            </a>
+          </div>
+
+        </form>
+
+      </div>
+    </main>
+  </div>
+</div>

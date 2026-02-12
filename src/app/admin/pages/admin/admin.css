@@ -1,0 +1,150 @@
+/* ================== PALETA ================== */
+:root {
+  --color-naranja: #e98119;
+  --color-plomo: #5c5c5c;
+  --color-oscuro: #2c2c2e;
+  --color-oscuro-2: #1f1f21;
+  --color-texto: #ffffff;
+  --color-muted: #cfcfcf;
+}
+
+/* ================== LAYOUT ================== */
+.admin-layout {
+  background: linear-gradient(135deg, #1f1f21, #2c2c2e);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #2c2c2e, #1f1f21);
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar img {
+  filter: drop-shadow(0 4px 10px rgba(233,129,25,.35));
+}
+
+/* ================== NAV ITEMS ================== */
+/* .sidebar a,
+.sidebar span {
+  color: var(--color-texto) !important;
+} */
+
+.nav-item {
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
+.nav-item a,
+.cursor-pointer {
+  border-radius: 14px;
+  transition: all .3s ease;
+}
+
+/* Hover */
+.nav-item:hover {
+  background: rgba(233,129,25,0.12);
+  transform: translateX(6px);
+}
+
+/* Active */
+.nav-item.active {
+  background: linear-gradient(
+    90deg,
+    rgba(233,129,25,0.35),
+    rgba(233,129,25,0.05)
+  );
+  box-shadow: inset 4px 0 0 var(--color-naranja);
+}
+
+/* Íconos */
+.nav-item i {
+  color: var(--color-muted);
+  transition: color .3s ease;
+}
+
+.nav-item:hover i,
+.nav-item.active i {
+  color: var(--color-naranja);
+}
+
+/* ================== DROPDOWN ================== */
+.dropdown-menu-submenu {
+  background: linear-gradient(180deg, #2c2c2e, #1f1f21);
+  border-radius: 0 0 14px 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.dropdown-item {
+  color: var(--color-muted) !important;
+  transition: all .3s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(233,129,25,0.15);
+  color: var(--color-texto) !important;
+  padding-left: 3rem;
+}
+
+.dropdown-item i {
+  color: var(--color-muted);
+}
+
+.dropdown-item:hover i {
+  color: var(--color-naranja);
+}
+
+/* ================== MAIN CONTENT ================== */
+.main-content {
+  background: radial-gradient(
+    circle at top,
+    rgba(233,129,25,0.12),
+    transparent 55%
+  );
+}
+
+/* ================== CARDS (DASHBOARD) ================== */
+.card {
+  background: linear-gradient(145deg, #2c2c2e, #1f1f21);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,.5),
+              0 0 0 1px rgba(233,129,25,.25);
+}
+
+/* ================== NOTIFICACIÓN ================== */
+.notification-toast {
+  background: linear-gradient(135deg, var(--color-naranja), #ff9a3c);
+  color: white;
+  border-radius: 16px;
+}
+
+/* ================== LOGOUT ================== */
+.nav-item.text-danger {
+  color: #ff6b6b !important;
+}
+
+.nav-item.text-danger:hover {
+  background: rgba(255,107,107,0.15);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 72px;
+  }
+
+  .sidebar span,
+  .sidebar img {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

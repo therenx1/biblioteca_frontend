@@ -1,0 +1,42 @@
+.contenedor {
+    background-color: #f7f9fc;
+    /* background-color: rebeccapurple; */
+}
+
+.profile-container {
+    min-height: 95vh;
+}
+
+.info-box {
+    background-color: #ffffff;
+    border-left: 5px solid #f0963a;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease-in-out;
+}
+
+.info-box:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+    color: #f0963a;
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+
+.profile-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.bg-orange {
+    background-color: #f0963a;
+}

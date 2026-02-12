@@ -1,0 +1,50 @@
+.contenedor {
+    background-color: #2e2e2e;
+    font-family: 'Segoe UI', sans-serif;
+    color: #f1f1f1;
+    height: 170vh;
+    margin-top: -30px;
+    width: 100%;
+}
+
+h1 {
+    color: #f0963a;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.table-container {
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(59, 59, 59, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.table {
+    background-color: #383838;
+    color: #ddd;
+}
+
+.table thead {
+    background: linear-gradient(to right, #f0963a, #e67e22);
+    color: white;
+}
+
+.btn-primary {
+    background-color: #f0963a;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e67e22;
+}
+
+.filter-box input {
+    background-color: #ececec;
+    border-radius: 12px;
+    border: none;
+    height: 38px;
+}

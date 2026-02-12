@@ -1,0 +1,105 @@
+.contenedor {
+    background-color: #2e2e2e;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-container {
+    background-color: #3a3a3a;
+    border-radius: 15px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #f0963a;
+    font-weight: bold;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #ddd;
+}
+
+.form-control {
+    background-color: #2e2e2e;
+    border: 1px solid #777;
+    color: #fff;
+}
+
+.form-control::placeholder {
+    color: #bbb;
+}
+
+.form-control:focus {
+    background-color: #2e2e2e;
+    color: #fff;
+    border-color: #f0963a;
+    box-shadow: 0 0 0 0.2rem rgba(240, 150, 58, 0.25);
+}
+
+.btn-group-custom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.btn-success {
+    background-color: #198754;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #f0963a;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e67e22;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background-color: #1f1f1f;
+    color: #bbb;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #444;
+}
+
+footer span {
+    color: #f0963a;
+    font-weight: 500;
+}

@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="logo_img">
+    <img src="/img/logoFormat.png" alt="Logo" />
+  </div>
+
+  <div *ngIf="errorLogin" class="alert alert-danger d-flex align-items-center justify-content-center" role="alert">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+    <p class="mb-0">Credenciales incorrectas</p>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1>Login</h1>
+
+    <div class="input-box">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" placeholder="Correo electrónico" formControlName="email" />
+    </div>
+
+    <div class="input-box">
+      <i class="fa-solid fa-lock"></i>
+      <input type="password" placeholder="Contraseña" formControlName="password"/>
+    </div>
+
+    <div class="remember-forgot">
+      <label><input type="checkbox" /> Recordarme</label>
+      <a href="#">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <button type="submit" class="btn" [disabled]="loading">
+      {{ loading ? 'Iniciando...' : 'Login' }}
+    </button>
+  </form>
+</div>

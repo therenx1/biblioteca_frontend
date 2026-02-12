@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0">
+                        <i class="bi" [ngClass]="esEdicion ? 'bi-pencil-square' : 'bi-person-plus-fill'"></i>
+                        {{ esEdicion ? 'Editar Autor' : 'Registrar Nuevo Autor' }}
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    <form (ngSubmit)="guardar()" #autorForm="ngForm">
+                        <div class="row">
+                            <div class="col-md-12 mb-3" *ngIf="esEdicion">
+                                <label class="form-label fw-bold">ID Autor</label>
+                                <input type="text" class="form-control" [value]="nuevoAutor.id_autores" readonly>
+                            </div>
+
+                            <div class="col-md-12 mb-3">
+                                <label for="txtNombre" class="form-label fw-bold">Nombre Completo</label>
+                                <input type="text" class="form-control" id="txtNombre" name="nombre_autores"
+                                    [(ngModel)]="nuevoAutor.nombreAutores" placeholder="Ej: Gabriel García Márquez"
+                                    required>
+                            </div>
+
+                            <div class="col-md-12 mb-3">
+                                <label for="txtNacionalidad" class="form-label fw-bold">Nacionalidad</label>
+                                <input type="text" class="form-control" id="txtNacionalidad" name="nacionalidad"
+                                    [(ngModel)]="nuevoAutor.nacionalidad" placeholder="Ej: Colombiana" required>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-end gap-2">
+                            <a routerLink="/vistaAutores" class="btn btn-primary">
+                                <i class="bi bi-arrow-left-circle"></i> Cancelar
+                            </a>
+
+                            <button type="submit" class="btn btn-success" [disabled]="!autorForm.form.valid">
+                                <i class="bi bi-save-fill"></i>
+                                {{ esEdicion ? 'Actualizar Cambios' : 'Grabar Autor' }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
