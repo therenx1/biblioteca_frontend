@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoriaService {
 
-  private apiUrl = 'https://bibliotecabackend-production.up.railway.app/api/categorias';
+  private apiUrl = 'https://bibliotecabackend-production.up.railway.app/api/categoria';
 
   constructor(private http: HttpClient) {}
 
